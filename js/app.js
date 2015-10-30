@@ -1,7 +1,7 @@
 /** @jsx React.DOM */
 
 window.components = window.components || {};
-var TodoApp2 = React.createClass({
+var App = React.createClass({
     getInitialState: function() {
         return {
             isLoading: true,
@@ -11,18 +11,10 @@ var TodoApp2 = React.createClass({
     },
 
     componentWillMount: function() {
-        this.firebaseRef = new Firebase(window.conf.firebaseUrl + '/users');
-        this.firebaseRef.on('value', function(dataSnapshot) {
-            var users = [];
-            dataSnapshot.forEach(function(childSnapshot) {
-                var user = childSnapshot.val();
-                user['.key'] = childSnapshot.key();
-                user.activities = user.activities || [];
-                users.push(user);
-            });
+        this.firebaseRef = window.api.getUsers(function(data) {
             this.setState({
                 isLoading: false,
-                items: users
+                items: data.users
             });
         }.bind(this));
     },
@@ -75,4 +67,4 @@ var TodoApp2 = React.createClass({
     }
 });
 
-React.render(<TodoApp2 />, document.getElementById('app'));
+React.render(<App />, document.getElementById('app'));

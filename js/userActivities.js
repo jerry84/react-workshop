@@ -12,16 +12,9 @@ window.components.UserActivities = React.createClass({
     },
 
     componentWillMount: function() {
-        this.firebaseRef = new Firebase(window.conf.firebaseUrl + '/users/' + this.props.userId + '/activities');
-        this.firebaseRef.on('value', function(dataSnapshot) {
-            var activities = [];
-            dataSnapshot.forEach(function(childSnapshot) {
-                var activity = childSnapshot.val();
-                activity['.key'] = childSnapshot.key();
-                activities.push(activity);
-            });
+        this.firebaseRef = window.api.getUserActivities(this.props.userId, function(data) {
             this.setState({
-                activities: activities
+                activities: data.activities
             });        
         }.bind(this));
     },
