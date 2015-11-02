@@ -1,6 +1,7 @@
 /** @jsx React.DOM */
 
 window.components = window.components || {};
+var UsersList = window.components.UsersList;
 var App = React.createClass({
     getInitialState: function() {
         return {
@@ -49,7 +50,6 @@ var App = React.createClass({
     },
 
     render: function() {
-        var UsersList = window.components.UsersList;
         var content = this.state.isLoading ? (
             <span>loading</span>
         ) : (
