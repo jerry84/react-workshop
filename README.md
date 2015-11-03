@@ -8,3 +8,7 @@
 * node server.js
 * Login to https://www.firebase.com/ and create an app
 * Configure js/conf.js by replacing the url with the new app's url from firebase
+
+## Example 
+
+* https://github.com/Mobenga/react-workshop/blob/master/js/app.js
