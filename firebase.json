@@ -1,4 +1,30 @@
 {
-  "firebase": "reactfiretodoapp",
-  "public": "."
+  "users" : {
+    "-K1sAt-7IvDAqxZGrwGR" : {
+      "activities" : {
+        "-K1sAuWJsVjUmNMBWsWX" : {
+          "date" : "Fri Oct 30 2015 10:59:02 GMT+0100 (CET)",
+          "time" : "30"
+        },
+        "-K28MaqtZ-PHONVC5Kxy" : {
+          "date" : "Mon Nov 02 2015 19:03:40 GMT+0100 (CET)",
+          "time" : "50"
+        },
+        "-K28MbSpyVnd-5DBg74O" : {
+          "date" : "Mon Nov 02 2015 19:03:42 GMT+0100 (CET)",
+          "time" : "10"
+        }
+      },
+      "email" : "test@mobenga.com"
+    },
+    "-K28MfTQO3Cb0ML-8pEd" : {
+      "activities" : {
+        "-K28MgQZgfg0zVJrZthg" : {
+          "date" : "Mon Nov 02 2015 19:04:03 GMT+0100 (CET)",
+          "time" : "60"
+        }
+      },
+      "email" : "test2@mobenga.com"
+    }
+  }
 }
