@@ -1,3 +1,3 @@
 window.conf = window.conf || {
-    firebaseUrl: 'https://radiant-fire-4950.firebaseio.com/'
+    firebaseUrl: 'https://luminous-fire-6413.firebaseio.com/'
 };

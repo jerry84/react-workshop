@@ -3,14 +3,14 @@ window.components = window.components || {};
 var UserActivities = window.components.UserActivities;
 window.components.UsersList = React.createClass({
 
-    getInitialState: function() {
+    getInitialState() {
         return {
             time: 0,
             date: ''
         };
     },
 
-    render: function() {
+    render() {
         var _this = this;
         var createItem = function(item, index) {
             var activities = []; 

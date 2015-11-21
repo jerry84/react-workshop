@@ -1,5 +1,5 @@
 window.api = window.api || {
-    getUsers: function(callback) {
+    getUsers(callback) {
         var firebaseRef;
         firebaseRef = new Firebase(window.conf.firebaseUrl + '/users');
         firebaseRef.on('value', function(dataSnapshot) {
@@ -18,7 +18,7 @@ window.api = window.api || {
         
         return firebaseRef;
     },
-    getUserActivities: function(id, callback) {
+    getUserActivities(id, callback) {
         var firebaseRef;
         firebaseRef = new Firebase(window.conf.firebaseUrl + '/users/' + id + '/activities');
         firebaseRef.on('value', function(dataSnapshot) {

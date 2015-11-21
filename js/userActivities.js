@@ -2,7 +2,7 @@
 window.components = window.components || {};
 window.components.UserActivities = React.createClass({
 
-    getInitialState: function() {
+    getInitialState() {
         return {
             firebaseRef: null,
             time: '',
@@ -11,7 +11,7 @@ window.components.UserActivities = React.createClass({
         };
     },
 
-    componentWillMount: function() {
+    componentWillMount() {
         this.firebaseRef = window.api.getUserActivities(this.props.userId, function(data) {
             this.setState({
                 activities: data.activities
@@ -19,13 +19,13 @@ window.components.UserActivities = React.createClass({
         }.bind(this));
     },
 
-    onChange: function(e) {
+    onChange(e) {
         this.setState({
             time: e.target.value
         });
     },
 
-    handleSubmit: function (key) {
+    handleSubmit(key) {
         var self = this; 
         return function(e) {
             e.preventDefault();
@@ -45,7 +45,7 @@ window.components.UserActivities = React.createClass({
         };
     },
 
-    render: function() {
+    render() {
         var self = this;
         var activities = self.state.activities;
         var userId = self.state.userId;

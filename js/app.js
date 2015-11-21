@@ -3,7 +3,7 @@
 window.components = window.components || {};
 var UsersList = window.components.UsersList;
 var App = React.createClass({
-    getInitialState: function() {
+    getInitialState() {
         return {
             isLoading: true,
             items: [],
@@ -11,7 +11,7 @@ var App = React.createClass({
         };
     },
 
-    componentWillMount: function() {
+    componentWillMount() {
         this.firebaseRef = window.api.getUsers(function(data) {
             this.setState({
                 isLoading: false,
@@ -20,22 +20,22 @@ var App = React.createClass({
         }.bind(this));
     },
 
-    componentWillUnmount: function() {
+    componentWillUnmount() {
         this.firebaseRef.off();
     },
 
-    onChange: function(e) {
+    onChange(e) {
         this.setState({
             email: e.target.value
         });
     },
 
-    removeUser: function(key) {
+    removeUser(key) {
         var firebaseRef = new Firebase(window.conf.firebaseUrl + '/users/');
         firebaseRef.child(key).remove();
     },
 
-    handleSubmit: function(e) {
+    handleSubmit(e) {
         e.preventDefault();
         var self = this; 
         if (this.state.email && this.state.email.trim().length !== 0) {
@@ -49,7 +49,7 @@ var App = React.createClass({
         }
     },
 
-    render: function() {
+    render() {
         var content = this.state.isLoading ? (
             <span>loading</span>
         ) : (
